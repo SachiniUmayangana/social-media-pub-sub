@@ -4,6 +4,9 @@
  */
 package uk.ac.bolton.services.impl;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import uk.ac.bolton.services.ChannelObservable;
 import uk.ac.bolton.services.ChannelObserver;
 
@@ -12,7 +15,9 @@ import uk.ac.bolton.services.ChannelObserver;
  * @author sachi
  */
 public class ChannelObservableImpl implements ChannelObservable{
-
+    
+    public static Map<String, List<ChannelObserver>> channelList = new HashMap<>();
+    
     @Override
     public void addChannel(String name) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
