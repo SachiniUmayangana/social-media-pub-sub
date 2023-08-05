@@ -36,10 +36,9 @@ public class HomePageForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        HomePage = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        btnSubscribe = new javax.swing.JButton();
         btnSubscribe1 = new javax.swing.JButton();
+        btnSubscribe = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -53,23 +52,8 @@ public class HomePageForm extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        HomePage.setBackground(new java.awt.Color(255, 255, 255));
-        HomePage.setForeground(new java.awt.Color(255, 255, 255));
-
-        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel1.setText("Hey Tweety");
-
-        btnSubscribe.setBackground(new java.awt.Color(102, 102, 102));
-        btnSubscribe.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
-        btnSubscribe.setForeground(new java.awt.Color(255, 255, 255));
-        btnSubscribe.setText("Channel");
-        btnSubscribe.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btnSubscribe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSubscribeActionPerformed(evt);
-            }
-        });
+        setTitle("Home Page");
+        setPreferredSize(new java.awt.Dimension(550, 600));
 
         btnSubscribe1.setBackground(new java.awt.Color(102, 102, 102));
         btnSubscribe1.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
@@ -82,60 +66,56 @@ public class HomePageForm extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout HomePageLayout = new javax.swing.GroupLayout(HomePage);
-        HomePage.setLayout(HomePageLayout);
-        HomePageLayout.setHorizontalGroup(
-            HomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HomePageLayout.createSequentialGroup()
-                .addGroup(HomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(HomePageLayout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addGroup(HomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnSubscribe1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSubscribe, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(HomePageLayout.createSequentialGroup()
-                        .addGap(131, 131, 131)
-                        .addComponent(jLabel1)))
-                .addContainerGap(157, Short.MAX_VALUE))
-        );
-        HomePageLayout.setVerticalGroup(
-            HomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HomePageLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1)
-                .addGap(40, 40, 40)
-                .addComponent(btnSubscribe, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
-                .addComponent(btnSubscribe1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67))
-        );
+        btnSubscribe.setBackground(new java.awt.Color(102, 102, 102));
+        btnSubscribe.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        btnSubscribe.setForeground(new java.awt.Color(255, 255, 255));
+        btnSubscribe.setText("Channel");
+        btnSubscribe.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnSubscribe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubscribeActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel1.setText("Hey Tweety");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(203, 203, 203)
-                .addComponent(HomePage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(263, Short.MAX_VALUE))
+                .addGap(146, 146, 146)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSubscribe1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSubscribe, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabel1)))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(256, Short.MAX_VALUE)
-                .addComponent(HomePage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(131, 131, 131))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabel1)
+                .addGap(40, 40, 40)
+                .addComponent(btnSubscribe, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                .addComponent(btnSubscribe1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubscribe1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubscribe1ActionPerformed
-        // TODO add your handling code here:
+        new SubscribePageForm(this.channelObservable).setVisible(true);
     }//GEN-LAST:event_btnSubscribe1ActionPerformed
 
     private void btnSubscribeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubscribeActionPerformed
-        // TODO add your handling code here:
+        new ChannelPageForm(this.channelObservable).setVisible(true);
     }//GEN-LAST:event_btnSubscribeActionPerformed
 
     /**
@@ -174,7 +154,6 @@ public class HomePageForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel HomePage;
     private javax.swing.JButton btnSubscribe;
     private javax.swing.JButton btnSubscribe1;
     private javax.swing.JLabel jLabel1;
