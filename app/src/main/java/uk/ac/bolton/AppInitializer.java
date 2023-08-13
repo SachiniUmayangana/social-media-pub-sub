@@ -4,18 +4,31 @@
  */
 package uk.ac.bolton;
 
-import uk.ac.bolton.services.ChannelObservable;
-import uk.ac.bolton.services.impl.ChannelObservableImpl;
-import uk.ac.bolton.view.HomePageForm;
+import java.util.ArrayList;
+import java.util.List;
+import uk.ac.bolton.view.LoginForm;
+import uk.ac.bolton.view.NewChannelForm;
+import uk.ac.bolton.view.custom.SuperChannel;
 
 /**
  *
  * @author sachi
  */
 public class AppInitializer {
-    public static void main(String[] args) {
-        ChannelObservable channelObservable = new ChannelObservableImpl();
-        
-        new HomePageForm(channelObservable).setVisible(true);
+    private static final List<SuperChannel> list = new ArrayList<>();
+    
+    static {
+        list.add(new NewChannelForm());
+    }
+    
+    public static void main(String[] args) {        
+        new LoginForm().setVisible(true);
+        channelInit();
+    }
+    
+     private static void channelInit() {
+        for (int i = 0; i < list.size(); i++) {
+            list.get(i).displayChannel(true);
+        }
     }
 }
