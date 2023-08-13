@@ -11,3 +11,5 @@ package uk.ac.bolton.view.custom;
 public interface SuperChannel {
     void displayChannel(boolean flag);
 }
+
+

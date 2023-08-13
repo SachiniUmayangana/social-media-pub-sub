@@ -37,84 +37,12 @@ public class NewChannelForm extends javax.swing.JFrame implements SuperChannel{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jFrame1 = new javax.swing.JFrame();
-        jLabel2 = new javax.swing.JLabel();
-        btnTweet = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtAreaContent = new javax.swing.JTextArea();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtAreaContent1 = new javax.swing.JTextArea();
         btnTweet1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-
-        jFrame1.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        jFrame1.setTitle("Channel");
-
-        jLabel2.setFont(new java.awt.Font("Liberation Mono", 3, 18)); // NOI18N
-        jLabel2.setText("Tweety Channel");
-
-        btnTweet.setBackground(new java.awt.Color(204, 204, 0));
-        btnTweet.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
-        btnTweet.setText("Tweet");
-        btnTweet.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnTweet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTweetActionPerformed(evt);
-            }
-        });
-
-        txtAreaContent.setColumns(20);
-        txtAreaContent.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        txtAreaContent.setRows(5);
-        jScrollPane1.setViewportView(txtAreaContent);
-
-        jLabel3.setFont(new java.awt.Font("Liberation Sans", 0, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel3.setText("What's on you mind...");
-
-        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-        jFrame1.getContentPane().setLayout(jFrame1Layout);
-        jFrame1Layout.setHorizontalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame1Layout.createSequentialGroup()
-                .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jFrame1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel3))
-                            .addGroup(jFrame1Layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(btnTweet, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jFrame1Layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addComponent(jLabel2)))
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-        jFrame1Layout.setVerticalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame1Layout.createSequentialGroup()
-                .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jFrame1Layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(jLabel1))
-                    .addGroup(jFrame1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)
-                        .addComponent(jLabel3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(btnTweet, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47))
-        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -191,34 +119,20 @@ public class NewChannelForm extends javax.swing.JFrame implements SuperChannel{
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnTweetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTweetActionPerformed
-
-          new Thread() {
-            @Override
-            public void run() {
-                String content = txtAreaContent.getText();
-                if (content.equals("")) {
-                    throw new IllegalArgumentException("Content should be there before the tweet!");
-                }
-
-                channelObservable.updateTheTimeLine(content);
-            }
-        }.start();
-
-    }//GEN-LAST:event_btnTweetActionPerformed
-
     private void btnTweet1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTweet1ActionPerformed
 
-        new Thread() {
+        Thread t1 = new Thread() {
             @Override
             public void run() {
                 String content = txtAreaContent1.getText();
                 if (content.equals("")) {
-                    throw new IllegalArgumentException("Content should be there before the tweet!");
+                    throw new IllegalArgumentException("Input fields can't be "
+                            + "null before post the content!");
                 }
                 channelObservable.updateTheTimeLine(content);
             }
-        }.start();
+        };
+        t1.start();
     }//GEN-LAST:event_btnTweet1ActionPerformed
 
     /**
@@ -257,18 +171,11 @@ public class NewChannelForm extends javax.swing.JFrame implements SuperChannel{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnTweet;
     private javax.swing.JButton btnTweet1;
-    private javax.swing.JFrame jFrame1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea txtAreaContent;
     private javax.swing.JTextArea txtAreaContent1;
     // End of variables declaration//GEN-END:variables
 
